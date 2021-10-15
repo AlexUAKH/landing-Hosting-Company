@@ -1,0 +1,225 @@
+.intro {
+  // .intro__crunch
+  &__crunch {
+  }
+
+  // .intro__container
+  &__container {
+  }
+
+  // .intro__body
+  &__body {
+    flex: 1 1 608px;
+  }
+
+  // .intro__title
+  &__title {
+    padding-top: 28px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 121%;
+    color: #2e2e2e;
+  }
+
+  // .intro__text
+  &__text {
+    margin-top: 34px;
+    max-width: 450px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.05em;
+    color: #808080;
+  }
+
+  // .intro__actions
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  // .intro__link
+  &__link {
+    flex: 0 1 40%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 171%;
+    color: #000000;
+    &.active {
+      background-color: @accent;
+      color: white;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  // .intro__img
+  &__img {
+    width: 100%;
+    height: auto;
+    & img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+.crunch {
+  // .crunch__list
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+  // .crunch__item
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      padding-right: 18px;
+    }
+  }
+  &__item::before {
+    content: "";
+    position: absolute;
+    background-color: #e5e5e5;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__item-link {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 147%;
+    color: rgba(214, 212, 212, 0.88);
+  }
+  &__item-link.active {
+    color: #b00000;
+    pointer-events: none;
+    cursor: default;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: @accent;
+      height: 1px;
+      width: 80%;
+      left: 0;
+      bottom: -4px;
+      margin: 0 10%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .intro {
+    &__actions {
+      flex-wrap: wrap;
+    }
+    &__link {
+      flex: 0 0 100%;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+@media (min-width: 960px) {
+  .crunch {
+    &__item-link:not([class~="active"]):hover {
+      opacity: 0.6;
+      color: #b00000;
+    }
+  }
+  .intro {
+    &__container {
+      display: flex;
+      padding-right: 25px;
+    }
+    &__link {
+      &:hover {
+        background-color: @accent;
+        color: white;
+        border: 0;
+      }
+    }
+    &__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-top: 60px;
+    }
+
+    &__link {
+      &:not(:last-child) {
+        margin-right: 24px;
+      }
+    }
+
+    &__img {
+      flex: 0 1 501px;
+      & img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1160px) {
+  .intro {
+    &__container {
+      position: relative;
+    }
+    &__container::after,
+    &__container::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      z-index: 2;
+    }
+    &__container::after {
+      bottom: 40px;
+      height: 72px;
+      border-right: 72px solid @accent;
+      border-top: 72px solid transparent;
+    }
+    &__container::before {
+      top: 63px;
+      height: 40px;
+      border-right: 40px solid @accent;
+      border-top: 40px solid transparent;
+    }
+    &__img {
+      position: relative;
+    }
+    &__img::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      left: -28px;
+      bottom: 161px;
+      height: 40px;
+      border-left: 40px solid @accent;
+      border-top: 40px solid transparent;
+    }
+    &__title {
+      font-size: 64px;
+    }
+  }
+}

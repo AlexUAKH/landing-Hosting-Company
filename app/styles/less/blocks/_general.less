@@ -5,6 +5,11 @@ a {
   display: inline-block;
   &:hover {
     color: inherit;
+    cursor: pointer;
+  }
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
   }
 }
 
