@@ -1,0 +1,293 @@
+.packages {
+  // .packages__container
+
+  &__container {
+  }
+
+  // .packages__title
+
+  &__title {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+  }
+
+  // .packages__text
+
+  &__text {
+    margin-bottom: 35px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 100%;
+    text-align: center;
+    color: #000000;
+  }
+
+  // .packges__period_badge
+  &__period {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 40px;
+  }
+  &__checkbox {
+    margin: 0 15px !important;
+  }
+  &__period-month {
+  }
+  &__period-year {
+    position: relative;
+  }
+  &__period_badge {
+    //white-space: nowrap;
+    padding: 8px;
+    position: absolute;
+    right: 0; //calc(-100% -20px);
+    top: 0%;
+    transform: translate(80%, -90%);
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 90%;
+    text-align: center;
+    color: #000000;
+
+    background: #ffe87a;
+    border-radius: 8px;
+  }
+
+  &__navtabs {
+    //max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  // .packages__navtab
+  &__navtab {
+    flex: 0 1 50%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 133%;
+
+    text-align: center;
+
+    color: #000000;
+    border-bottom: 4px solid #c4c4c4;
+    &.active {
+      border-bottom: 4px solid @accent;
+    }
+  }
+
+  // .packages__tabs
+  &__tabs {
+  }
+}
+
+.tabs {
+  // .tabs__item
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  //padding: 0 25px;
+  &__item {
+    flex: 0 1 300px;
+    margin: 20px 10px;
+    padding: 34px 30px;
+    border: 1.5px solid #c4c4c4;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+  }
+
+  // .tabs__item-title
+
+  &__item-title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 89%;
+    color: #000000;
+    margin-bottom: 11px;
+  }
+
+  // .tabs__item-text
+
+  &__item-text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+    margin-bottom: 28px;
+  }
+
+  // .tabs__item-price
+
+  &__item-price {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 76%;
+  }
+
+  // .tabs__item-price-label
+
+  &__item-price-label {
+    margin-top: 11px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  // .tabs__item-button
+
+  &__item-button {
+    margin: 25px 0;
+  }
+
+  // .tabs__item-link
+
+  &__item-link {
+  }
+
+  // .tabs__item-list
+
+  &__item-list {
+    list-style: none;
+  }
+
+  // .tabs__item-list-item
+
+  &__item-list-item {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    font-feature-settings: "pnum" on, "lnum" on;
+    color: #808080;
+    background: url("../../../images/src/icons/check.png") left -2px no-repeat;
+    padding-left: 48px;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  .packages {
+    &__navtabs {
+      max-width: 80%;
+    }
+  }
+}
+@media (min-width: 480px) {
+  .tabs {
+    justify-content: center;
+    padding: 0 25px;
+    &__item {
+      margin: 20px 15px;
+    }
+  }
+}
+@media (min-width: 600px) {
+  .tabs {
+    &__item-price {
+      font-size: 38px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .packages {
+    // .packages__container
+
+    &__container {
+    }
+
+    // .packages__title
+
+    &__title {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      font-size: 50px;
+    }
+
+    &__text {
+      margin-bottom: 55px;
+      font-size: 25px;
+    }
+
+    &__period {
+      font-size: 25px;
+      margin-bottom: 70px;
+    }
+    &__checkbox {
+      margin: 0 25px !important;
+    }
+    &__period_badge {
+      font-size: 10px;
+      right: calc(-100% - 20px);
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    &__navtabs {
+      max-width: 70%;
+      margin-bottom: 65px;
+    }
+
+    &__navtab {
+      font-size: 30px;
+    }
+
+    &__tabs {
+    }
+  }
+
+  .tabs {
+    padding: 0 25px;
+    // justify-content: ;
+    &__item {
+      flex-shrink: 0;
+      //margin: 20px 4%;
+    }
+
+    &__item-price {
+      font-size: 42px;
+    }
+
+    &__item-button {
+      margin: 35px 0;
+    }
+  }
+}
+
+@media (min-width: 1104px) {
+  .tabs {
+    justify-content: space-between;
+    //padding: 0 25px;
+  }
+}

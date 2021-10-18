@@ -31,7 +31,7 @@
     font-family: Inter;
     font-style: normal;
     font-weight: 800;
-    font-size: 48px;
+    font-size: 35px;
     line-height: 133%;
     font-feature-settings: "salt" on, "liga" off;
     color: #18191f;
@@ -58,8 +58,11 @@
   margin-top: 20px;
   //justify-content: space-between;
   &__item {
-    flex: 0 0 33.333%;
+    flex: 0 0 100%;
     text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
   }
 
   // .info-partners__img
@@ -80,7 +83,7 @@
   // .features__item
 
   &__item {
-    flex: 0 0 50%;
+    flex: 0 0 100%;
   }
 }
 .feature {
@@ -127,25 +130,31 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 400px) {
   .info-partners {
     &__item {
       flex: 0 0 50%;
     }
   }
 }
-@media (max-width: 400px) {
+
+@media (min-width: 480px) {
+  .features {
+    &__item {
+      flex: 0 0 50%;
+    }
+  }
+}
+
+@media (min-width: 600px) {
   .info-partners {
     &__item {
-      flex: 0 0 100%;
-      &:not(:last-child) {
-        margin-bottom: 30px;
-      }
+      flex: 0 0 33.333%;
     }
   }
   .features {
     &__item {
-      flex: 0 0 100%;
+      flex: 0 0 50%;
     }
   }
 }

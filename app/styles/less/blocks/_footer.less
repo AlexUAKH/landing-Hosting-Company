@@ -25,8 +25,7 @@
   }
   &__column:first-child {
     margin-top: -20px;
-    margin-right: 60px;
-    flex: 0 0 296px;
+    flex: 0 1 296px;
   }
 
   &__copyright {
@@ -90,6 +89,9 @@
 
 @media (min-width: 960px) {
   .column {
+    &:first-child {
+      margin-right: 70px;
+    }
     & a {
       transition: 0.2s;
     }

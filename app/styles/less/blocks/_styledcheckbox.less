@@ -1,0 +1,115 @@
+@toggle-indicator-size: 30px;
+@marginY: 10px;
+@marginX: 6px;
+@track-height: @toggle-indicator-size + @marginY * 2;
+@track-width: @toggle-indicator-size * 2.8;
+@indicator-path: @track-width - @toggle-indicator-size - @marginX * 2 - 2;
+@highContrastModeSupport: solid 2px transparent;
+@indicator: white;
+@track-border: @accent;
+@track-background: @accent;
+@focus-ring: 0;
+@speed: 0.3s;
+
+.toggleCheckbox {
+  align-items: center;
+  border-radius: 100px;
+  display: flex;
+  font-weight: 700;
+  margin-bottom: 16px;
+
+  // &:last-of-type {
+  //   margin: 0;
+  // }
+}
+
+.toggleCheckbox__input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+
+  // This style sets the focus ring. The ":not([disabled])" prevents the focus ring from creating a flash when the element is clicked.
+  &:not([disabled]):active + .toggleCheckbox__track,
+  &:not([disabled]):focus + .toggleCheckbox__track {
+    border: 1px solid transparent;
+    box-shadow: @focus-ring;
+  }
+
+  &:disabled + .toggleCheckbox__track {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+.toggleCheckbox__track {
+  background: @track-background;
+  border: 1px solid @track-border;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  height: @track-height;
+  // margin-right: 12px;
+  position: relative;
+  width: @track-width;
+}
+
+.toggleCheckbox__indicator {
+  align-items: center;
+  background: @indicator;
+  border-radius: @toggle-indicator-size;
+  //bottom: 2px;
+  align-self: center;
+  display: flex;
+  height: @toggle-indicator-size;
+  justify-content: center;
+  left: @marginX;
+  outline: @highContrastModeSupport;
+  position: absolute;
+  transition: @speed;
+  width: @toggle-indicator-size;
+}
+
+.toggleCheckbox__input:checked
+  + .toggleCheckbox__track
+  .toggleCheckbox__indicator {
+  background: @indicator;
+  transform: translateX(@indicator-path);
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .toggleCheckbox__track {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 959px) {
+  @toggle-indicator-size: 20px;
+  @marginY: 5px;
+  @marginX: 3px;
+  @track-height: @toggle-indicator-size + @marginY * 2;
+  @track-width: @toggle-indicator-size * 2.5;
+  @indicator-path: @track-width - @toggle-indicator-size - @marginX * 2 - 2;
+
+  .toggleCheckbox__track {
+    height: @track-height;
+    position: relative;
+    width: @track-width;
+  }
+
+  .toggleCheckbox__indicator {
+    border-radius: @toggle-indicator-size;
+    height: @toggle-indicator-size;
+    left: @marginX;
+    width: @toggle-indicator-size;
+  }
+
+  .toggleCheckbox__input:checked
+    + .toggleCheckbox__track
+    .toggleCheckbox__indicator {
+    transform: translateX(@indicator-path);
+  }
+}
