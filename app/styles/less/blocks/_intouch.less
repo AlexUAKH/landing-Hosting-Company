@@ -1,0 +1,127 @@
+.intouch {
+  // .intouch__container
+
+  &__container {
+    padding: 0 5px;
+  }
+
+  // .intouch__body
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f7fafe;
+    border-radius: 16px;
+    padding: 40px 16px;
+  }
+
+  // .intouch__title
+
+  &__title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 137%;
+    color: #2e2e2e;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  // .intouch__link
+
+  &__link {
+    height: 48px;
+    border-radius: 8px;
+    color: white;
+    background-color: @accent;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__link-text {
+    background: url("../../../images/src/icons/viber.svg") left 8px no-repeat;
+    padding: 5px 0 5px 40px;
+  }
+}
+
+@media (min-width: 600px) {
+  .intouch {
+    // .intouch__container
+
+    &__container {
+      padding: 0 25px;
+    }
+
+    // .intouch__body
+
+    &__body {
+      padding: 60px 40px;
+    }
+
+    // .intouch__title
+
+    &__title {
+      width: 90%;
+      max-width: 750px;
+      font-size: 45px;
+      margin-bottom: 35px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .intouch {
+    // .intouch__container
+
+    &__container {
+      padding: 0 40px;
+      position: relative;
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+      }
+      &::before {
+        bottom: 88px;
+        left: 20px;
+        border-bottom: 40px solid @accent;
+        border-right: 40px solid transparent;
+        z-index: 2;
+      }
+      &::after {
+        bottom: 40px;
+        right: 15px;
+        border-bottom: 72px solid @accent;
+        border-left: 72px solid transparent;
+      }
+    }
+
+    // .intouch__body
+
+    &__body {
+      padding: 80px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 473px;
+        top: 0;
+        border-bottom: 40px solid @accent;
+        border-left: 40px solid transparent;
+        z-index: 2;
+      }
+    }
+
+    // .intouch__title
+
+    &__title {
+      max-width: 800px;
+      font-size: 64px;
+      margin-bottom: 40px;
+    }
+  }
+}
