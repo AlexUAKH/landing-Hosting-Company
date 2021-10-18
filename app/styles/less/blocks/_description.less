@@ -1,0 +1,136 @@
+.description {
+  // .description__info
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .description__info-body
+
+  &__info-body {
+    flex: 1 1 100%;
+  }
+
+  // .description__info-partners
+
+  &__info-partners {
+    flex: 1 1 100%;
+  }
+
+  // .description__features
+
+  &__features {
+    margin-top: 80px;
+  }
+}
+.info-body {
+  // .info-body__title
+
+  &__title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 133%;
+    font-feature-settings: "salt" on, "liga" off;
+    color: #18191f;
+  }
+
+  // .info-body__text
+
+  &__text {
+    margin-top: 30px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 178%;
+    font-feature-settings: "salt" on, "liga" off;
+    color: #18191f;
+  }
+}
+.info-partners {
+  // .info-partners__item
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  &__item {
+    flex: 0 0 33.333%;
+  }
+
+  // .info-partners__img
+
+  &__img {
+    max-width: 100%;
+  }
+}
+.features {
+  // .features__row
+
+  &__row {
+    display: flex;
+    padding: 0 40px;
+  }
+
+  // .features__item
+
+  &__item {
+    flex: 0 0 25%;
+  }
+}
+.feature {
+  // .feature__icon
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  &__icon {
+  }
+
+  // .feature__label
+
+  &__label {
+    margin-top: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    color: #000000;
+  }
+
+  // .feature__text
+
+  &__text {
+    margin-top: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+
+    color: #000000;
+  }
+}
+
+@media (min-width: 960px) {
+  .description {
+    // .description__info
+    &__info {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    // .description__info-body
+    &__info-body {
+      flex: 0 1 45%;
+    }
+    // .description__info-partners
+
+    &__info-partners {
+      flex: 0 1 45%;
+    }
+  }
+}

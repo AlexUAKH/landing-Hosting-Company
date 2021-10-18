@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(documentWidth);
     if (documentWidth < 960) {
       moveNode("intro__img", "intro__body", 1);
+    } else {
+      document
+        .getElementsByClassName("intro__container")[0]
+        .appendChild(document.getElementsByClassName("intro__img")[0]);
     }
   });
 
