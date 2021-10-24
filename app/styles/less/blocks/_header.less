@@ -80,7 +80,7 @@
     align-items: center;
     color: #000000;
     white-space: nowrap;
-    transition: 0.4s;
+    transition: 0.3s;
   }
 }
 
@@ -117,10 +117,20 @@
   .menu {
     &__link {
       position: relative;
-      &:hover {
-        color: white;
-        opacity: 0.7;
-        background-color: @accent;
+      &:not([class~="active"]):hover {
+        // color: white;
+        opacity: 0.5;
+        &::after {
+          position: absolute;
+          content: "";
+          background-color: @accent;
+          height: 2px;
+          left: 0;
+          right: 0;
+          bottom: 16px;
+          margin: 0 22%;
+        }
+        // background-color: @accent;
       }
     }
     &__link.active::after {
