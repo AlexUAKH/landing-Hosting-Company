@@ -26,6 +26,7 @@ import changed from "gulp-changed";
 import concat from "gulp-concat";
 import rsync from "gulp-rsync";
 import del from "del";
+import replaceImageSrc from "gulp-replace-image-src";
 
 function browsersync() {
   browserSync.init({
@@ -134,6 +135,14 @@ async function buildhtml() {
   let includes = new ssi("app/", "dist/", "/**/*.html");
   includes.compile();
   del("dist/parts", { force: true });
+  src("dist/*.html")
+    .pipe(
+      replaceImageSrc({
+        prependSrc: "./images/",
+        keepOrigin: true
+      })
+    )
+    .pipe(dest("dist"));
 }
 
 async function cleandist() {
