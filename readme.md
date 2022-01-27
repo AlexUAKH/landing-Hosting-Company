@@ -1,1 +1,1 @@
-<h1>Landing page for Hosting Company</h1>
+<h3>Landing page for Hosting Company</h3>
